@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <button (click)="startDrawing()">START</button>
+    <button (click)="stopDrawing()">STOP</button>
+  </div>
+
+  <canvas
+    (mousemove)="trackMouse('mousemove', $event)"
+    (mousedown)="trackMouse('mousedown', $event)"
+    (mouseup)="trackMouse('mouseup', $event)"
+    (mouseleave)="trackMouse('mouseleave', $event)"
+
+    (mousewheel)="trackMouse('mousewheel', $event)"
+
+    #canvasRef
+    [width]="width"
+    [height]="height"
+  ></canvas>
+</div>
